@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Agbalumo";
+}
+body {
+  display: flex;
+  padding: 0 10px;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(#cc0066, #ff66b3, #ffffff);
+}
+#para {
+  color: white;
+}
+.details {
+  color: white;
+}
+::selection {
+  color: #fff;
+  background: #cc0066;
+}
+.wrapper {
+  width: 700px;
+  padding: 40px;
+  background: #1a1a1a;
+  border-radius: 20px;
+  box-shadow: 0 10px 15px, rgba(0, 0, 0, 0.5);
+}
+.wrapper .typer {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+}
+.wrapper .box {
+  padding: 15px 20px 0;
+  border-radius: 10px;
+  border: 3px solid #cc0066;
+}
+.box .context {
+  overflow: hidden;
+  max-height: 260px;
+}
+.text::-webkit-scrollbar {
+  width: 0;
+}
+.text p {
+  font-size: 20px;
+  text-align: justify;
+  letter-spacing: 1px;
+}
+.text p span {
+  position: relative;
+}
+.text p span.correct {
+  color: #cc0099;
+}
+.text p span.incorrect {
+  color: #ff6666;
+  border-radius: 5px;
+}
+.text p span.active::before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+  border-radius: 5px;
+  background: #cc0066;
+  animation: blink 2s in-out infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 2;
+  }
+}
+.box .context {
+  margin-top: 15px;
+  display: flex;
+  padding: 10px 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid #cc0066;
+}
+.context button {
+  outline: none;
+  border: none;
+  width: 110px;
+  color: #cc0066;
+  padding: 6px 0;
+  margin: 2px 0;
+  font-size: 20px;
+  font-weight: 550;
+  cursor: pointer;
+  border-radius: 10px;
+  border: 2px solid #cc0066;
+  background: none;
+  transition: transform 0.1s ease;
+}
+.context button:active {
+  transform: scale(0.78);
+}
+.context button:hover {
+  color: #ffffff;
+}
+.context .details {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: calc(100%-150px);
+  justify-content: space-between;
+}
+.details li {
+  display: flex;
+  height: 20px;
+  list-style: none;
+  position: relative;
+  align-items: center;
+}
+.details li:not(:first-child) {
+  padding-left: 22px;
+  margin: 10px;
+  border-left: 2px solid #b3b3b3;
+}
+.details li p {
+  font-size: 15px;
+}
+.details li span {
+  display: block;
+  font-size: 15px;
+  margin-left: 10px;
+}
+li span b {
+  font-weight: 500;
+}
+li:not(:first-child) span {
+  font-weight: 500;
+}
+@media (max-width: 750px) {
+  .wrapper {
+    padding: 20px;
+  }
+  .box .context {
+    padding: 20px;
+  }
+  .box .text {
+    max-height: 100%;
+  }
+  .text p {
+    font-size: 18px;
+    text-align: left;
+  }
+  .context button {
+    width: 100%;
+    font-size: 18px;
+    padding: 10px 0;
+    margin-top: 20px;
+  }
+  .context .details {
+    width: 100%;
+  }
+  .details li:not(:first-child) {
+    border-left: 0;
+    padding: 0;
+  }
+  .details li p,
+  .details li span {
+    font-size: 13px;
+  }
+}
+@media (max-width: 644px) {
+  .wrapper .box {
+    padding: 10px 15px 0;
+  }
+  .text p {
+    font-size: 15px;
+  }
+  .details li {
+    margin-bottom: 10px;
+  }
+  .context button {
+    margin-top: 10px;
+  }
+}
